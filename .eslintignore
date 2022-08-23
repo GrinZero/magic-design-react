@@ -1,0 +1,11 @@
+node_modules
+node_modules/*
+.DS_Store
+dist
+build
+dist-ssr
+*.local
+*.md
+.*.js
+*.config.js
+*.config.ts

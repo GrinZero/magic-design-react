@@ -1,0 +1,31 @@
+.transtion-transform {
+	transition: transform 0.36s ease, clip-path 0.36s ease,
+		transform-origin 0.36s ease,width .36s ease;
+}
+
+.swiper-container {
+	&:extend(.transtion-transform);
+}
+
+.corner-swiper {
+	flex-shrink: 0;
+	overflow: visible;
+}
+
+.element-3d {
+	// clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+	display: -webkit-box;
+	width: var(--position);
+	transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateX(1px);
+	transform-origin: right;
+	transform-style: preserve-3d;
+	&:extend(.transtion-transform);
+}
+
+.element-2d {
+	clip-path: polygon(var(--position) 0, 100% 0, 100% 100%, var(--position) 100%);
+	transform: rotateX(var(--rotate-x));
+	transform-origin: var(--position) var(--position) 0;
+	transform-style: preserve-3d;
+	&:extend(.transtion-transform);
+}
