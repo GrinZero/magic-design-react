@@ -4,8 +4,8 @@ import { usePrevious, useSetState } from 'ahooks';
 
 import type { ComponentProps } from '@/types';
 
-import './index.less';
 import Cloudy from './cloudy/Cloudy';
+import './index.less';
 import Nighty from './nighty/Nighty';
 import Rainy from './rainy/Rainy';
 import Snowy from './snowy/Snowy';

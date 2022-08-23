@@ -13,7 +13,7 @@ module.exports = {
 	parserOptions: {
 		project: './tsconfig.eslint.json',
 	},
-	plugins: ['github', 'regexp', '@typescript-eslint'],
+	plugins: ['github', 'regexp', '@typescript-eslint', 'jest'],
 	extends: [
 		'plugin:@typescript-eslint/recommended',
 		'eslint:recommended',
@@ -32,7 +32,7 @@ module.exports = {
 		],
 		'filenames/match-regex': 'off',
 		'no-unused-vars': [
-			'error',
+			'warn',
 			{
 				vars: 'all',
 				args: 'after-used',
@@ -44,5 +44,6 @@ module.exports = {
 		'import/no-unresolved': 'off',
 		'security/detect-object-injection': 'off',
 		'simple-import-sort/imports': 'off',
+		'no-shadow': 'off',
 	},
 };

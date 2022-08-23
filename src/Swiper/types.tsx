@@ -1,4 +1,5 @@
 import type { ComponentProps } from '@/types';
+import React from 'react';
 
 import type { SwiperItemProps } from './swiper-item/SwiperItem';
 

@@ -1,6 +1,5 @@
-import 'windi.css';
-import 'animate.css';
+import './global.css';
 
 export { default as Foo } from './Foo';
-export { default as Weather } from './Weather';
 export * from './Swiper';
+export { default as Weather } from './Weather';

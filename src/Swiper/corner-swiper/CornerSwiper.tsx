@@ -67,11 +67,11 @@ const CornerSwiper: React.FC<CornerSwiperProps> = ({
 
 	return (
 		<div
-			className={`swiper-container`}
+			className="swiper-container"
 			style={{ transform: `translatex(${-translatePercent * oneItem * childrenList.length}px)` }}
 		>
 			<div
-				className={`mg-w-full mg-h-full mg-relative corner-swiper`}
+				className="mg-w-full mg-h-full mg-relative corner-swiper"
 				style={{ perspective, perspectiveOrigin: `${perspectiveOriginX} ${perspectiveOriginY}` }}
 			>
 				{element3D}

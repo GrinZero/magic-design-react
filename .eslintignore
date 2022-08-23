@@ -10,3 +10,7 @@ dist-ssr
 *.config.js
 *.config.ts
 *.json
+*.test.tsx
+es
+lib
+docs-dist

@@ -5,9 +5,9 @@ This is corn swiper
 ### Demo
 
 ```tsx
-import React, { useState } from 'react';
-import { CornerSwiper, SwiperItem } from 'magic-design-react';
 import { makeStyles } from '@mui/styles';
+import { CornerSwiper, SwiperItem } from 'magic-design-react';
+import React, { useState } from 'react';
 
 import firstPng from '@/assets/images/stories/swiperBanner1.png';
 import secondPng from '@/assets/images/stories/swiperBanner2.png';
@@ -37,7 +37,7 @@ const imgList = [
 	},
 ];
 
-const CornerSwiperIndex = () => {
+const CornerSwiperIndex: React.FC<void> = () => {
 	const classes = useStyles();
 	const [current, setCurrent] = useState(0);
 	const handleClick = () => {
@@ -49,7 +49,7 @@ const CornerSwiperIndex = () => {
 				{imgList.map((item) => (
 					<SwiperItem
 						key={item.alt}
-						className={`mg-w-270px mg-h-200px mg-rounded-lg`}
+						className={`mg-w-[270px] mg-h-[200px] mg-rounded-lg`}
 						onClick={() => setCurrent(0)}
 					>
 						<img className={`mg-w-full mg-h-full mg-object-cover`} alt={item.alt} src={item.src} />
