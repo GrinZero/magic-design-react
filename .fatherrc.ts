@@ -1,12 +1,8 @@
 import postcss from 'rollup-plugin-postcss';
 
 export default {
-	// more father 4 config: https://github.com/umijs/father-next/blob/master/docs/config.md
-	// lessInBabelMode: true,
 	esm: 'rollup',
-	// cssModules: true,
 	extractCSS: true,
-	// runtimeHelpers: true,
 	lessInRollupMode: {
 		javascriptEnabled: true,
 	},
