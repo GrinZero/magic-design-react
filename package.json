@@ -1,6 +1,6 @@
 {
 	"name": "magic-design-react",
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"description": "A component library that can achieve magic effects",
 	"keywords": [
 		"ui",
@@ -28,9 +28,8 @@
 		"url": "git+https://github.com/GrinZero/magic-design-react.git"
 	},
 	"license": "MIT",
-	"main": "lib/index.js",
-	"module": "es/index.js",
-	"typings": "es/index.d.ts",
+	"module": "dist/index.esm.js",
+	"typings": "dist/index.d.ts",
 	"files": [
 		"dist",
 		"es",
