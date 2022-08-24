@@ -1,3 +1,6 @@
+// import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 
 export default {
@@ -8,6 +11,9 @@ export default {
 	},
 	entry: ['./src/index.ts'],
 	extraRollupPlugins: [
+		peerDepsExternal(),
+		resolve(),
+		// commonjs(),
 		postcss({
 			extract: true,
 			plugins: [
@@ -19,6 +25,7 @@ export default {
 			],
 		}),
 	],
+	extraExternals: ['react', 'react-dom'],
 	autoprefixer: {
 		browsers: ['ie>9', 'Safari >= 6'],
 	},
