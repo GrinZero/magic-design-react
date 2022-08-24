@@ -5275,7 +5275,7 @@
     "@umijs/runtime" "3.5.32"
     react-router-config "5.1.1"
 
-"@umijs/runtime@3.5.32", "@umijs/runtime@^3.0.0":
+"@umijs/runtime@3.5.32", "@umijs/runtime@^3.0.0", "@umijs/runtime@^3.5.32":
   version "3.5.32"
   resolved "https://registry.yarnpkg.com/@umijs/runtime/-/runtime-3.5.32.tgz#aee490b75c3d9db8292c39908163f73f34e66485"
   integrity sha512-GKLoJkPNwC/Bukyh2ejBoJWPGSQuB9SFn7eqCmIh/fPNC/ijWgpp0pdqXHFm023itItKg9LW5F9vIlYCf343Sw==

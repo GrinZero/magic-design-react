@@ -79,6 +79,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.34.0",
 		"@typescript-eslint/parser": "^5.33.1",
 		"@umijs/fabric": "^3.0.0",
+		"@umijs/runtime": "^3.5.32",
 		"@umijs/test": "^4.0.13",
 		"dumi": "^1.1.47",
 		"eslint": "^8.22.0",
@@ -94,7 +95,7 @@
 		"yorkie": "^2.0.0"
 	},
 	"peerDependencies": {
-		"react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+		"react": "^16.8.0 || ^17.x || ^18.x",
 		"react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
 	},
 	"engines": {
