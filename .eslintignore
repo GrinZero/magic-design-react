@@ -13,4 +13,4 @@ dist-ssr
 *.test.tsx
 es
 lib
-docs-dist
+docs
