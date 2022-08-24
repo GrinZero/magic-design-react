@@ -48,7 +48,7 @@
 		"test:coverage": "umi-test --coverage"
 	},
 	"lint-staged": {
-		"*.{less,md,json}": [
+		"*.{css,less,md,json}": [
 			"prettier --write"
 		],
 		"*.ts?(x)": [
