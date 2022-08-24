@@ -40,7 +40,7 @@
 		"deploy": "npm run docs:build && npm run docs:deploy",
 		"dev": "TAILWIND_MODE=watch dumi dev",
 		"docs:build": "dumi build",
-		"docs:deploy": "gh-pages -d docs-dist",
+		"docs:deploy": "gh-pages -d docs",
 		"prepublishOnly": "npm run build",
 		"prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
 		"release": "npm publish --access public",
