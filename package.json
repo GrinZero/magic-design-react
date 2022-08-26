@@ -37,7 +37,7 @@
 	],
 	"scripts": {
 		"build": "father build",
-		"deploy": "npm run docs:build && npm run docs:deploy",
+		"deploy": "npm run docs:build && git add . && git commit -m \"docs: docs update;\" && npm run docs:deploy",
 		"dev": "TAILWIND_MODE=watch dumi dev",
 		"docs:build": "dumi build",
 		"docs:deploy": "gh-pages -d docs",
