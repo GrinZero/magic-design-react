@@ -18,9 +18,8 @@ const options = [
 	},
 ];
 
-export default () => {
-	return <CheckBoxList options={options} />;
-};
+const CheckBoxPage: React.FC<void> = () => <CheckBoxList options={options} />;
+export default CheckBoxPage;
 ```
 
 ### 1 All
@@ -28,17 +27,22 @@ export default () => {
 以下是所有的天气效果～
 
 ```tsx
-import React from 'react';
+/**
+ * inline: true
+ */
 import { Weather } from 'magic-design-react';
+import React from 'react';
 
-const WeatherAllSection = () => {
+const WeatherAllSection: React.FC<void> = () => {
 	return (
-		<div className="mg-flex mg-items-center mg-justify-center mg-flex-nowrap mg-w-full">
-			<Weather className="mg-mr-6" type="sunny" />
-			<Weather className="mg-mr-6" type="rainy" />
-			<Weather className="mg-mr-6" type="snowy" />
-			<Weather className="mg-mr-6" type="cloudy" />
-			<Weather className="mg-mr-6" type="nighty" />
+		<div className="mg-container mg-p-8 mg-overflow-auto">
+			<div className="mg-flex mg-items-center mg-flex-nowrap mg-w-full">
+				<Weather className="mg-mr-6" type="sunny" />
+				<Weather className="mg-mr-6" type="rainy" />
+				<Weather className="mg-mr-6" type="snowy" />
+				<Weather className="mg-mr-6" type="cloudy" />
+				<Weather className="mg-mr-6" type="nighty" />
+			</div>
 		</div>
 	);
 };
@@ -46,19 +50,22 @@ const WeatherAllSection = () => {
 export default WeatherAllSection;
 ```
 
+这些分别对应`sunny` | `rainy` | `snowy` | `cloudy` | `nighty`
+
+<API hideTitle></API>
+
 ### 2 Weather
 
 ```tsx
-import React, { useState } from 'react';
+import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { Weather } from 'magic-design-react';
-import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
+import React, { useState } from 'react';
 
 const options = ['sunny', 'rainy', 'snowy', 'cloudy', 'nighty'];
 
-const WeatherChangeSection = () => {
+const WeatherChangeSection: React.FC<void> = () => {
 	const [type, setType] = useState('sunny');
 	const handleChange = (e: any) => {
-		console.log('handleChange', e);
 		setType(e.target.value);
 	};
 	return (

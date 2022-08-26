@@ -11,40 +11,43 @@ import Rainy from './rainy/Rainy';
 import Snowy from './snowy/Snowy';
 import Sunny from './sunny/Sunny';
 
-enum WeatherType {
-	sunny = 'sunny',
-	cloudy = 'cloudy',
-	rainy = 'rainy',
-	snowy = 'snowy',
-	nighty = 'nighty',
-}
+type WeatherType = 'sunny' | 'cloudy' | 'rainy' | 'snowy' | 'nighty';
 
 const WeatherTypeStore = {
-	[WeatherType.sunny]: {
+	sunny: {
 		class: 'weather-sunny',
 		component: Sunny,
 	},
-	[WeatherType.cloudy]: {
+	cloudy: {
 		class: 'weather-cloudy',
 		component: Cloudy,
 	},
-	[WeatherType.rainy]: {
+	rainy: {
 		class: 'weather-rainy',
 		component: Rainy,
 	},
-	[WeatherType.snowy]: {
+	snowy: {
 		class: 'weather-snowy',
 		component: Snowy,
 	},
-	[WeatherType.nighty]: {
+	nighty: {
 		class: 'weather-nighty',
 		component: Nighty,
 	},
 };
 
-interface WeatherProps extends ComponentProps {
+export interface WeatherProps extends ComponentProps {
+	/**
+	 * @description 'sunny' | 'cloudy' | 'rainy' | 'snowy' | 'nighty'
+	 */
 	type: WeatherType;
+	/**
+	 * @description 切换天气需要的时间
+	 */
 	duration?: number;
+	/**
+	 * @description 右上角天气图标的动画时间，默认是duration的一半
+	 */
 	iconDuration?: number;
 }
 

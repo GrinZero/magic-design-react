@@ -1,3 +1,3 @@
-## Hello magic-design-react!
+## 开始
 
-Try to click Weather/Swiper
+这是一个魔法组件库，不过目前才刚刚动手，东西不是很完善，只做了「Weather」和「CornSwiper」两个组件

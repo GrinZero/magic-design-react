@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import type { SwiperProps } from '../types';
 import './CornerSwiper.less';
@@ -12,9 +12,6 @@ interface CornerSwiperProps extends SwiperProps {
 	perspectiveOriginX?: string;
 	perspectiveOriginY?: string;
 }
-
-const oneItem = 270;
-
 const CornerSwiper: React.FC<CornerSwiperProps> = ({
 	current,
 	children,
@@ -65,14 +62,19 @@ const CornerSwiper: React.FC<CornerSwiperProps> = ({
 		style: { '--position': positionStr, '--rotate-x': rotateX },
 	});
 
+	const [listWidth, setListWidth] = useState(0);
+	const listRef = useRef<HTMLDivElement>(null);
+	useLayoutEffect(() => {
+		if (!listRef.current) return;
+		setListWidth(listRef.current.scrollWidth);
+	}, [childrenList]);
+
 	return (
-		<div
-			className="swiper-container"
-			style={{ transform: `translatex(${-translatePercent * oneItem * childrenList.length}px)` }}
-		>
+		<div className="swiper-container" style={{ transform: `translateX(${-translatePercent * listWidth}px)` }}>
 			<div
 				className="mg-w-full mg-h-full mg-relative corner-swiper"
 				style={{ perspective, perspectiveOrigin: `${perspectiveOriginX} ${perspectiveOriginY}` }}
+				ref={listRef}
 			>
 				{element3D}
 				{element2D}

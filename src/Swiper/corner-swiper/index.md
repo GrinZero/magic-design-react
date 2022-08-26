@@ -1,8 +1,26 @@
-## CornSwiper
+## CornerSwiper
 
-This is corn swiper
+```tsx
+/**
+ * inline: true
+ */
+import React from 'react';
+import { CheckBoxList } from '../../public';
 
-### Demo
+const options = [
+	{
+		checked: false,
+		label: '100%',
+	},
+];
+
+const CheckBoxPage: React.FC<void> = () => <CheckBoxList options={options} />;
+export default CheckBoxPage;
+```
+
+This is corner swiper
+
+### DEMO
 
 ```tsx
 import { makeStyles } from '@mui/styles';
@@ -49,7 +67,7 @@ const CornerSwiperIndex: React.FC<void> = () => {
 				{imgList.map((item) => (
 					<SwiperItem
 						key={item.alt}
-						className={`mg-w-[270px] mg-h-[200px] mg-rounded-lg`}
+						className={`mg-w-[180px] mg-h-[120px]  mg-rounded-lg mg-overflow-hidden`}
 						onClick={() => setCurrent(0)}
 					>
 						<img className={`mg-w-full mg-h-full mg-object-cover`} alt={item.alt} src={item.src} />
@@ -68,3 +86,5 @@ const CornerSwiperIndex: React.FC<void> = () => {
 };
 export default CornerSwiperIndex;
 ```
+
+<API src="./CornerSwiper.tsx"></API>
