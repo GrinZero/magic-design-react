@@ -1,5 +1,5 @@
-import React from 'react';
 import { Checkbox, FormControlLabel } from '@mui/material';
+import React from 'react';
 import './CheckBoxList.less';
 
 interface CheckBoxListOption {
