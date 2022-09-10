@@ -1,4 +1,4 @@
-# magic-design
+# magic-design-react
 
 > A component library that can achieve magic effects
 
@@ -7,7 +7,7 @@
 ## Start
 
 ```bash
-pnpm add @source-bug/magic-design-react
+pnpm add magic-design-react
 ```
 
 ## Usage
@@ -29,11 +29,11 @@ import { Weather } from 'magic-design-react';
 import React from 'react';
 
 const Page: React.FC<void> = () => {
-	return (
-		<div className="Page">
-			<Weather />
-		</div>
-	);
+  return (
+    <div className="Page">
+      <Weather />
+    </div>
+  );
 };
 export default Page;
 ```
