@@ -47,5 +47,6 @@ module.exports = {
     'no-shadow': 'off',
     'fp/no-loops': 'off',
     'no-bitwise': 'off',
+    '@typescript-eslint/naming-convertion': 'off',
   },
 };

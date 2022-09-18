@@ -123,15 +123,23 @@ const Stack: React.ForwardRefRenderFunction<StackRef, StackProps> = (
 
   const stackEle = stack.map((item) =>
     render ? (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       <div className={`${classes} ${item === outValue ? outClass : ''}`} key={keyOfItem?.(item) ?? item?.toString()}>
         {render(item)}
       </div>
     ) : (
       <div
         className={`mg-stack__item ${classes} ${item === outValue ? outClass : ''}`}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         key={keyOfItem?.(item) ?? item?.toString()}
       >
-        {item?.toString()}
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          item?.toString()
+        }
       </div>
     ),
   );
