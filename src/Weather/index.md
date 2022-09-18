@@ -1,4 +1,4 @@
-# Weather
+# Weather 天气组件
 
 ```tsx
 /**
@@ -35,7 +35,7 @@ import React from 'react';
 
 const WeatherAllSection: React.FC<void> = () => {
   return (
-    <div className="mg-container mg-p-8 mg-overflow-auto">
+    <div className="mg-container mg-p-8 mg-scrollbar" style={{ padding: '54px 45px 54px 45px' }}>
       <div className="mg-flex mg-items-center mg-flex-nowrap mg-w-full">
         <Weather className="mg-mr-6" type="sunny" />
         <Weather className="mg-mr-6" type="rainy" />

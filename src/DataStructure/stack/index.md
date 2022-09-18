@@ -18,8 +18,7 @@ const DemoDefault: React.FC<void> = () => {
     ref.current.push(~~(Math.random() * 100) + 1);
   };
   const handlePop = () => {
-    const val = ref.current.pop();
-    val && setOutPut([...outPut, val]);
+    ref.current.pop();
     requestAnimationFrame(() => {
       scrollRef.current?.scrollTo({
         behavior: 'smooth',
@@ -34,9 +33,13 @@ const DemoDefault: React.FC<void> = () => {
     ref.current.reset();
   };
 
+  const handleOnPop = (value: any) => {
+    setOutPut((prev: any) => [...prev, value]);
+  };
+
   return (
     <div className="mg-flex mg-flex-col mg-p-8 mg-justify-evenly">
-      <Stack className="mg-w-[600px] mg-h-[90px]" ref={ref} />
+      <Stack className="mg-w-[600px] mg-h-[90px]" ref={ref} onPop={handleOnPop} />
       <div className="mg-flex mg-mt-2 mg-items-center mg-w-[600px] mg-overflow-hidden">
         <div className="mg-h-[50px] mg-p-[8px]  mg-flex mg-items-center mg-justify-center  mg-flex-shrink-0">
           OUTPUT

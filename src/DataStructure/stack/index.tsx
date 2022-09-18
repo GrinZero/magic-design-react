@@ -1,6 +1,8 @@
 import { ComponentProps } from '@/types';
-import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import './index.less';
+
+import { useAsyncTaskList } from '@/hooks';
 
 export interface StackProps extends ComponentProps {
   defaultValue?: unknown[];
@@ -11,6 +13,7 @@ export interface StackProps extends ComponentProps {
   direction?: 'col' | 'row';
   defaultMargin?: boolean;
   autoScroll?: boolean;
+  onPop?: (item: unknown) => void;
 }
 
 export interface StackRef {
@@ -27,6 +30,7 @@ const Stack: React.ForwardRefRenderFunction<StackRef, StackProps> = (
   {
     className = '',
     defaultValue = [],
+    onPop,
     render,
     keyOfItem,
     tailRender,
@@ -41,6 +45,25 @@ const Stack: React.ForwardRefRenderFunction<StackRef, StackProps> = (
 
   const domRef = useRef<HTMLDivElement>(null);
 
+  const [addTask, clearTasks, tasks] = useAsyncTaskList();
+
+  const [outValue, setOutValue] = useState<unknown>(null);
+
+  useEffect(() => {
+    if (outValue !== null) {
+      addTask(() => {
+        const newStack = [...stack];
+        const lastItem = newStack.pop();
+        setStack(newStack);
+        onPop?.(lastItem);
+        return lastItem;
+      }, 500);
+      addTask(() => {
+        setOutValue(null);
+      }, 800);
+    }
+  }, [outValue]);
+
   const handlePush = (item: unknown) => {
     setStack([...stack, item]);
     autoScroll &&
@@ -53,10 +76,16 @@ const Stack: React.ForwardRefRenderFunction<StackRef, StackProps> = (
       });
   };
   const handlePop = () => {
-    const newStack = [...stack];
-    const lastItem = newStack.pop();
-    setStack(newStack);
-    return lastItem;
+    if (tasks.length !== 0) {
+      clearTasks();
+    }
+    setOutValue(stack[stack.length - 1]);
+    return stack[stack.length - 1];
+  };
+
+  const handleReset = () => {
+    clearTasks();
+    setStack([]);
   };
 
   useImperativeHandle(ref, () => ({
@@ -66,27 +95,36 @@ const Stack: React.ForwardRefRenderFunction<StackRef, StackProps> = (
     pop: handlePop,
     peek: () => stack[stack.length - 1],
     isEmpty: () => stack.length === 0,
-    reset: () => setStack([]),
+    reset: handleReset,
   }));
 
   const classes = [
-    'mg-stack__item',
     'animate__animated',
     defaultMargin ? (direction === 'row' ? 'mg-mr-2' : 'mg-mt-2') : '',
     direction === 'row' ? 'animate__fadeInRight' : 'animate__fadeInUp',
   ].join(' ');
 
+  const outClass = direction === 'row' ? 'animate__fadeOutRight' : 'animate__fadeOutUp';
+
+  const stackEle = stack.map((item) =>
+    render ? (
+      <div className={`${classes} ${item === outValue ? outClass : ''}`} key={keyOfItem?.(item) ?? item?.toString()}>
+        {render(item)}
+      </div>
+    ) : (
+      <div
+        className={`mg-stack__item ${classes} ${item === outValue ? outClass : ''}`}
+        key={keyOfItem?.(item) ?? item?.toString()}
+      >
+        {item?.toString()}
+      </div>
+    ),
+  );
+
   return (
     <div className={`mg-scrollbar mg-stack mg-flex mg-flex-${direction} ${className}`} ref={domRef}>
       {headRender?.()}
-      {stack.map(
-        (item) =>
-          render?.(item) ?? (
-            <div className={classes} key={keyOfItem?.(item) ?? item?.toString()}>
-              {item?.toString()}
-            </div>
-          ),
-      )}
+      {stackEle}
       {tailRender?.()}
     </div>
   );
