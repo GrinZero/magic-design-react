@@ -3,22 +3,33 @@ import React from 'react';
 import './CheckBoxList.less';
 
 interface CheckBoxListOption {
-	label: string | boolean | number;
-	checked: boolean;
+  label: string | boolean | number;
+  checked: boolean;
 }
 
 interface CheckBoxListProps {
-	options: Array<CheckBoxListOption>;
+  options: Array<CheckBoxListOption>;
 }
 
 const CheckBoxList: React.FC<CheckBoxListProps> = ({ options }) => {
-	return (
-		<div className="mg-flex mg-flex-col mg-checkboxlist-container">
-			{options.map(({ checked, label }, index) => (
-				<FormControlLabel key={index} control={<Checkbox checked={checked} />} label={label} />
-			))}
-		</div>
-	);
+  return (
+    <div className="mg-flex mg-flex-col mg-checkboxlist-container">
+      {options.map(({ checked, label }, index) => (
+        <FormControlLabel
+          key={index}
+          control={
+            <Checkbox
+              classes={{
+                root: 'mg-checkboxlist-checkbox',
+              }}
+              checked={checked}
+            />
+          }
+          label={label}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default CheckBoxList;

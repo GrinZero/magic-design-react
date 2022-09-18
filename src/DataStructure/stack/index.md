@@ -1,5 +1,23 @@
 # 栈 Stack
 
+```tsx
+/**
+ * inline: true
+ */
+import React from 'react';
+import { CheckBoxList } from '../../public';
+
+const options = [
+  {
+    checked: false,
+    label: '竖方向的栈',
+  },
+];
+
+const CheckBoxPage: React.FC<void> = () => <CheckBoxList options={options} />;
+export default CheckBoxPage;
+```
+
 ## Default
 
 这是一个数据结构中的栈结构
@@ -60,3 +78,5 @@ const DemoDefault: React.FC<void> = () => {
 };
 export default DemoDefault;
 ```
+
+<API src="./index.tsx"></API>

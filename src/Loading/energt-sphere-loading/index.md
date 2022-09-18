@@ -86,3 +86,5 @@ const DemoIndex: React.FC<void> = () => {
 };
 export default DemoIndex;
 ```
+
+<API src="./index.tsx"></API>

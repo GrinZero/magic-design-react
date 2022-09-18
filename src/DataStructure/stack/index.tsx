@@ -6,13 +6,28 @@ import { useAsyncTaskList } from '@/hooks';
 
 export interface StackProps extends ComponentProps {
   defaultValue?: unknown[];
+  /**
+   * @description 在栈底/栈头渲染内容
+   */
   headRender?: () => React.ReactNode;
+  /**
+   * @description 在栈顶/栈尾渲染内容
+   */
   tailRender?: () => React.ReactNode;
+  /**
+   * @description 允许自定义单元格，但是你还是得写keyOfItem
+   */
   render?: (item: unknown) => React.ReactNode;
+  /**
+   * @description 得到item的key
+   */
   keyOfItem?: (item: unknown) => string;
   direction?: 'col' | 'row';
   defaultMargin?: boolean;
   autoScroll?: boolean;
+  /**
+   * @description pop时触发，pop是异步的，因为动画是异步的
+   */
   onPop?: (item: unknown) => void;
 }
 

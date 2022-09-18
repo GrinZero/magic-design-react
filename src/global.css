@@ -14,6 +14,7 @@ body {
 
 body {
   --mg-scrollbar-bg: rgba(209, 209, 209, 0.419);
+  --mg-theme-border: #666666;
   --mg-border-color: rgba(222, 222, 222, 0.35);
   --mg-weight-border-color: rgba(198, 198, 198, 0.85);
   --mg-theme-bg-color: rgba(255, 255, 255, 0.31);
@@ -22,6 +23,7 @@ body {
 
 [data-prefers-color='dark'] body {
   --mg-scrollbar-bg: rgba(59, 63, 66, 0.7);
+  --mg-theme-border: #f9fafb;
   --mg-border-color: rgba(113, 119, 144, 0.25);
   --mg-weight-border-color: rgba(88, 93, 114, 0.75);
   --mg-theme-bg-color: rgba(16, 18, 27, 0.4);
