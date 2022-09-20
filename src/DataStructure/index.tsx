@@ -1,2 +1,2 @@
-export * from './stack';
-export { default as Stack } from './stack';
+export * from './list';
+export { default as List } from './list';

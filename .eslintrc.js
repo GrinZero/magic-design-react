@@ -48,5 +48,6 @@ module.exports = {
     'fp/no-loops': 'off',
     'no-bitwise': 'off',
     '@typescript-eslint/naming-convertion': 'off',
+    'max-lines-per-function': 'off',
   },
 };

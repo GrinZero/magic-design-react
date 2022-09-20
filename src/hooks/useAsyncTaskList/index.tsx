@@ -1,18 +1,20 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 type AsyncTask = [number | undefined, (() => unknown) | null];
 
-const useAsyncTaskList = (): [(task: () => unknown, delay: number) => void, () => void, AsyncTask[]] => {
+const useAsyncTaskList = (): [
+  (task: () => unknown, delay: number) => void,
+  (runAction?: boolean) => void,
+  AsyncTask[],
+] => {
   const tasks = useRef<Record<number, AsyncTask>>({});
-  const [update, setUpdate] = useState(0);
 
-  const clearTasks = () => {
+  const clearTasks = (runAction = true) => {
     for (const [timeID, task] of Object.values(tasks.current)) {
       clearTimeout(timeID);
-      task?.();
+      runAction && task?.();
     }
     tasks.current = {};
-    setUpdate(update + 1);
   };
   const addTask = (task: () => unknown, delay: number) => {
     const key = ~~(Math.random() * 1000) + Date.now();
