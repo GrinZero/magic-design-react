@@ -15,9 +15,10 @@ jobs:
           npm install -g yarn
           yarn install
           npm run docs:build
+          npm run docs:deploy
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          branch: gh-pages
-          folder: docs
+      # - name: Deploy
+      #   uses: JamesIves/github-pages-deploy-action@v4.3.3
+      #   with:
+      #     branch: gh-pages
+      #     folder: docs
