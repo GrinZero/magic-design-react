@@ -23,7 +23,7 @@ jobs:
 
       - name: List files
         run: ls -la
-        working-directory: ${{ github.workspace }}/docs
+        working-directory: ${{ github.workspace }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -31,3 +31,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ${{ github.workspace }}
+          workdir: ${{ github.workspace }}
