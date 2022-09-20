@@ -10,15 +10,22 @@ jobs:
       - name: Checkout
       - uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
       - name: Install and Build
         run: |
           npm install -g yarn
-          yarn install
+          yarn
           npm run docs:build
           npm run docs:deploy
 
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@v4.3.3
-      #   with:
-      #     branch: gh-pages
-      #     folder: docs
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          full_commit_message: ${{ github.event.head_commit.message }}
