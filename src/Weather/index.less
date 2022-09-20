@@ -1,0 +1,39 @@
+.weather-container {
+	position: relative;
+	z-index: 1;
+	min-width: 150px;
+	width: 150px;
+	height: 150px;
+	border-radius: 40%;
+	transition: background-color var(--animate-duration) ease, box-shadow var(--animate-duration) ease;
+}
+
+.weather-sunny {
+	background: linear-gradient(to top right, transparent, rgb(251 140 0));
+	background-color: rgb(255 87 34);
+	box-shadow: 1px 1px 30px #ff6e00;
+}
+
+.weather-cloudy {
+	background: linear-gradient(to top right, transparent, rgb(3 155 229) 40%);
+	background-color: rgb(63 81 181);
+	box-shadow: 1px 1px 30px #0277bd;
+}
+
+.weather-rainy {
+	background: #91cb56 linear-gradient(to top right, transparent, #43c1d4 50%);
+	background-color: rgb(145 203 86);
+	box-shadow: 1px 1px 30px #43c0d4;
+}
+
+.weather-snowy {
+	background: linear-gradient(to top right, transparent, rgb(33 33 33) 90%);
+	background-color: rgb(117 117 117);
+	box-shadow: 1px 1px 30px rgb(33 33 33);
+}
+
+.weather-nighty {
+	background: linear-gradient(to bottom right, transparent, rgb(171 71 188) 70%);
+	background-color: rgb(63 81 181);
+	box-shadow: 1px 1px 30px rgb(81 45 168);
+}

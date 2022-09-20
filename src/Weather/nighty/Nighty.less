@@ -1,0 +1,88 @@
+@keyframes meteor {
+	10% {
+		opacity: 1;
+	}
+
+	80% {
+		top: 75%;
+		left: 10%;
+		opacity: 0;
+	}
+}
+
+.night {
+	li {
+		position: absolute;
+		width: 3px;
+		height: 3px;
+		list-style: none;
+		background-color: #fff;
+		border-radius: 100%;
+		transform: rotate(45deg);
+	}
+
+	li:nth-child(1) {
+		top: 30%;
+		left: 65%;
+	}
+
+	li:nth-child(2) {
+		top: 35%;
+		left: 53%;
+	}
+
+	li:nth-child(3) {
+		top: 20%;
+		left: 75%;
+		width: 2px;
+		height: 2px;
+		opacity: 0;
+		animation: meteor 1.5s infinite linear;
+		animation-delay: 0.6s;
+	}
+
+	li:nth-child(4) {
+		top: 5%;
+		left: 50%;
+	}
+
+	li:nth-child(5) {
+		top: 20%;
+		left: 55%;
+		width: 1px;
+		height: 15px;
+		opacity: 0;
+		animation: meteor 1.5s infinite linear;
+	}
+}
+
+.moon {
+	position: absolute;
+	top: -10%;
+	left: 65%;
+	width: 70px;
+	height: 70px;
+	background: rgb(255 241 118);
+	border-radius: 100%;
+	box-shadow: 1px 1px 30px rgb(224 224 224);
+}
+
+.spot1 {
+	position: absolute;
+	top: 0%;
+	left: 85%;
+	width: 10px;
+	height: 10px;
+	background-color: #777;
+	border-radius: 100%;
+}
+
+.spot2 {
+	position: absolute;
+	top: 30%;
+	left: 75%;
+	width: 5px;
+	height: 5px;
+	background-color: #777;
+	border-radius: 100%;
+}
