@@ -126,17 +126,17 @@ const DemoDefault: React.FC<void> = () => {
           <Button onClick={handleShift}>shift</Button>
           <Button onClick={handleReset}>reset</Button>
         </div>
-        <div className="mg-flex mg-mt-2">
+        <div className="mg-mt-2 mg-grid mg-grid-cols-4">
           <Button onClick={handleChangeDir} variant="outlined">
             Change direction
           </Button>
-          <Button className="mg-ml-1" variant="outlined" data-type="isEmpty" onClick={handleAction}>
+          <Button variant="outlined" data-type="isEmpty" onClick={handleAction}>
             isEmpty
           </Button>
-          <Button className="mg-ml-1" variant="outlined" data-type="size" onClick={handleAction}>
+          <Button variant="outlined" data-type="size" onClick={handleAction}>
             size
           </Button>
-          <Button className="mg-ml-1" variant="outlined" data-type="getValue" onClick={handleAction}>
+          <Button variant="outlined" data-type="getValue" onClick={handleAction}>
             getValue
           </Button>
         </div>

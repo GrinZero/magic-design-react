@@ -1,14 +1,7 @@
 module.exports = {
   mode: 'jit',
   prefix: 'mg-',
-  purge: [
-    './*.html',
-    './src/*.{js,ts,jsx,tsx,md,mdx}',
-    './src/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './src/**/**/*.{js,ts,jsx,tsx,md,mdx}',
-    './docs/*.{js,ts,jsx,tsx,md,mdx}',
-    './docs/**/*.{js,ts,jsx,tsx,md,mdx}',
-  ],
+  purge: ['./*.html', './src/*.{ts,jsx,tsx,md}', './src/**/*.{ts,jsx,tsx,md}'],
   theme: {
     extend: {},
   },
