@@ -20,7 +20,6 @@ jobs:
           npm install -g yarn
           yarn
           npm run docs:build
-          npm run docs:deploy
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
