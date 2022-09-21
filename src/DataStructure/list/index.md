@@ -28,10 +28,20 @@ export default CheckBoxPage;
 
 ```tsx
 import { Button } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { List } from 'magic-design-react';
 import React, { useRef, useState } from 'react';
 
+const useStyles = makeStyles({
+  outLineContainer: {
+    '& > button': {
+      marginRight: '4px',
+    },
+  },
+});
+
 const DemoDefault: React.FC<void> = () => {
+  const classes = useStyles();
   const [outPut, setOutPut] = useState<any>([]);
   const [actionOutPut, setActionOutPut] = useState<[string | null, any]>([null, null]);
 
@@ -126,7 +136,7 @@ const DemoDefault: React.FC<void> = () => {
           <Button onClick={handleShift}>shift</Button>
           <Button onClick={handleReset}>reset</Button>
         </div>
-        <div className="mg-mt-2 mg-grid mg-grid-cols-4">
+        <div className={`mg-mt-2 mg-flex ${classes.outLineContainer}`}>
           <Button onClick={handleChangeDir} variant="outlined">
             Change direction
           </Button>
