@@ -1,32 +1,34 @@
 import { useRef } from 'react';
 
-type AsyncTask = [number | undefined, (() => unknown) | null];
+type AsyncTaskFrom = 'normal' | 'clear';
+type AsyncTaskItem = (from?: AsyncTaskFrom) => unknown;
+type AsyncTask = [number | undefined, AsyncTaskItem | null];
 
 const useAsyncTaskList = (): [
-  (task: () => unknown, delay: number) => void,
+  (task: AsyncTaskItem, delay: number) => void,
   (runAction?: boolean) => void,
-  AsyncTask[],
+  () => AsyncTask[],
 ] => {
   const tasks = useRef<Record<number, AsyncTask>>({});
 
   const clearTasks = (runAction = true) => {
-    for (const [timeID, task] of Object.values(tasks.current)) {
+    for (const [timeID, action] of Object.values(tasks.current)) {
       clearTimeout(timeID);
-      runAction && task?.();
+      runAction && action?.('clear');
     }
     tasks.current = {};
   };
-  const addTask = (task: () => unknown, delay: number) => {
+  const addTask = (task: AsyncTaskItem, delay: number) => {
     const key = ~~(Math.random() * 1000) + Date.now();
-    const action = () => {
-      task();
+    const action = (from: AsyncTaskFrom = 'normal') => {
+      task(from);
       delete tasks.current[key];
     };
     const timeID = setTimeout(action, delay);
     tasks.current[key] = [timeID, action];
   };
 
-  return [addTask, clearTasks, Object.values(tasks.current)];
+  return [addTask, clearTasks, () => Object.values(tasks.current)];
 };
 
 export default useAsyncTaskList;
