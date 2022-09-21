@@ -49,5 +49,6 @@ module.exports = {
     'no-bitwise': 'off',
     '@typescript-eslint/naming-convertion': 'off',
     'max-lines-per-function': 'off',
+    'github/array-foreach': 'off',
   },
 };
