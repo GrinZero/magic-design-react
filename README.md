@@ -17,7 +17,7 @@ pnpm add magic-design-react
 ### App.tsx
 
 ```tsx
-import 'magic-design-react/dist/index.esm.css';
+import 'magic-design-react/dist/magic-design-react.css';
 ```
 
 ### index.tsx
