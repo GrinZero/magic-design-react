@@ -1,6 +1,6 @@
 {
   "name": "magic-design-react",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "A component library that can achieve magic effects",
   "keywords": [
     "ui",
@@ -33,8 +33,7 @@
   "files": [
     "dist",
     "es",
-    "lib",
-    "tsconfig.json"
+    "lib"
   ],
   "scripts": {
     "build": "vite build",
