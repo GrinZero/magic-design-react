@@ -68,7 +68,7 @@ const outClassMap = {
 
 const getID = () => `${Date.now()}-${~~(Math.random() * 10000)}`;
 
-const List = forwardRef<ListRef>(
+const List = forwardRef<ListRef, ListProps>(
   (
     {
       className = '',
