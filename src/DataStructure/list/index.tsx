@@ -7,6 +7,7 @@ import { toString } from '@/utils';
 import { useAsyncTaskList } from '@/hooks';
 
 export interface ListProps<T = any> extends ComponentProps {
+  itemClassName?: string;
   defaultValue?: T[];
   /**
    * @description 在列表头部渲染内容
@@ -72,6 +73,7 @@ const List = forwardRef<ListRef, ListProps>(
   (
     {
       className = '',
+      itemClassName = '',
       defaultValue = [],
       onPop,
       onShift,
@@ -260,7 +262,7 @@ const List = forwardRef<ListRef, ListProps>(
     const listEle = list.map((item) => {
       const baseClasses = `${classes} ${inValue.includes(item) ? inClass : ''} ${
         outValue.includes(item) ? outClass : ''
-      }`;
+      } ${itemClassName}`;
       return render ? (
         <div className={baseClasses} key={item}>
           {render(valStore.current[item])}
