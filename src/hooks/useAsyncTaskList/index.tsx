@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 type AsyncTaskFrom = 'normal' | 'clear';
 type AsyncTaskItem = (from?: AsyncTaskFrom) => unknown;
-type AsyncTask = [number | undefined, AsyncTaskItem | null];
+type AsyncTask = [NodeJS.Timeout, AsyncTaskItem | null];
 
 const useAsyncTaskList = (): [
   (task: AsyncTaskItem, delay: number) => void,

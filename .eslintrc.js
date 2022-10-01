@@ -50,5 +50,9 @@ module.exports = {
     '@typescript-eslint/naming-convertion': 'off',
     'max-lines-per-function': 'off',
     'github/array-foreach': 'off',
+    'fp/no-let': 'off',
+  },
+  globals: {
+    NodeJS: true,
   },
 };

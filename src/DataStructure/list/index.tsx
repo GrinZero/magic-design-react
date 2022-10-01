@@ -2,7 +2,7 @@ import { ComponentProps } from '@/types';
 import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import './index.less';
 
-import { toString } from '@/utils';
+import { getID, toString } from '@/utils';
 
 import { useAsyncTaskList } from '@/hooks';
 
@@ -66,8 +66,6 @@ const outClassMap = {
   splicecol: 'animate__fadeOutLeft',
   splicerow: 'animate__fadeOutDown',
 };
-
-const getID = () => `${Date.now()}-${~~(Math.random() * 10000)}`;
 
 const List = forwardRef<ListRef, ListProps>(
   (

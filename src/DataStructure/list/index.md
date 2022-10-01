@@ -136,85 +136,87 @@ const DemoDefault: React.FC<void> = () => {
   };
 
   return (
-    <div className={`mg-flex mg-flex-${dir === 'row' ? 'col' : 'row'} mg-p-8 mg-justify-evenly`}>
-      <List
-        className={dir === 'row' ? 'mg-w-[600px] mg-h-[90px]' : 'mg-w-[90px] mg-h-[600px]'}
-        ref={ref}
-        onPop={handleOnValue}
-        onShift={handleOnValue}
-        direction={dir}
-      />
-      <div className="mg-flex mg-flex-col mg-ml-4">
-        <div className="mg-flex mg-mt-2 mg-items-center mg-w-[600px] mg-overflow-hidden">
-          <div className="mg-h-[50px] mg-p-[8px] mg-flex mg-items-center mg-justify-center mg-flex-shrink-0">
-            OUTPUT
+    <div className="mg-container mg-scrollbar">
+      <div className={`mg-flex mg-flex-${dir === 'row' ? 'col' : 'row'} mg-p-8 mg-justify-evenly`}>
+        <List
+          className={dir === 'row' ? 'mg-w-[600px] mg-h-[90px]' : 'mg-w-[90px] mg-h-[600px]'}
+          ref={ref}
+          onPop={handleOnValue}
+          onShift={handleOnValue}
+          direction={dir}
+        />
+        <div className="mg-flex mg-flex-col mg-ml-4">
+          <div className="mg-flex mg-mt-2 mg-items-center mg-w-[600px] mg-overflow-hidden">
+            <div className="mg-h-[50px] mg-p-[8px] mg-flex mg-items-center mg-justify-center mg-flex-shrink-0">
+              OUTPUT
+            </div>
+            <div className="mg-flex mg-flex-1 mg-items-center mg-scrollbar" ref={scrollRef}>
+              {outPut.map((item: any, index: number) => (
+                <div className="mg-list__item mg-ml-2" key={index}>
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="mg-flex mg-flex-1 mg-items-center mg-scrollbar" ref={scrollRef}>
-            {outPut.map((item: any, index: number) => (
-              <div className="mg-list__item mg-ml-2" key={index}>
-                {item}
+
+          <div className="mg-flex mg-mt-2 mg-items-center mg-w-[600px] mg-overflow-hidden">
+            <div className="mg-h-[50px] mg-p-[8px] mg-flex mg-items-center mg-justify-center mg-flex-shrink-0">
+              ACTION
+            </div>
+            <div className="mg-flex mg-flex-1 mg-items-center">
+              <div className="mg-list__item mg-ml-2" style={{ width: '100px' }}>
+                {actionOutPut[0] ?? 'None'}
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mg-flex mg-mt-2 mg-items-center mg-w-[600px] mg-overflow-hidden">
-          <div className="mg-h-[50px] mg-p-[8px] mg-flex mg-items-center mg-justify-center mg-flex-shrink-0">
-            ACTION
-          </div>
-          <div className="mg-flex mg-flex-1 mg-items-center">
-            <div className="mg-list__item mg-ml-2" style={{ width: '100px' }}>
-              {actionOutPut[0] ?? 'None'}
-            </div>
-            <div className="mg-list__item mg-ml-2 mg-px-2" style={{ minWidth: '100px', width: 'auto' }}>
-              {actionOutPut[1]?.toString?.() ?? 'None'}
+              <div className="mg-list__item mg-ml-2 mg-px-2" style={{ minWidth: '100px', width: 'auto' }}>
+                {actionOutPut[1]?.toString?.() ?? 'None'}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mg-flex mg-flex-col mg-mt-2 mg-w-[600px] mg-overflow-hidden">
-          <div className="mg-p-[8px] mg-flex mg-flex-shrink-0">CODE</div>
-          <div className="mg-flex mg-flex-1 mg-items-center mg-p-2 mg-bg-gray-800 mg-min-h-[60px] mg-text-white mg-rounded-md">
-            {code}
+          <div className="mg-flex mg-flex-col mg-mt-2 mg-w-[600px] mg-overflow-hidden">
+            <div className="mg-p-[8px] mg-flex mg-flex-shrink-0">CODE</div>
+            <div className="mg-flex mg-flex-1 mg-items-center mg-p-2 mg-bg-gray-800 mg-min-h-[60px] mg-text-white mg-rounded-md">
+              {code}
+            </div>
           </div>
-        </div>
 
-        <div className="mg-flex mg-mt-2">
-          <Button onClick={handlePush}>push</Button>
-          <Button onClick={handlePop}>pop</Button>
-          <Button onClick={handleUnShift}>unshift</Button>
-          <Button onClick={handleShift}>shift</Button>
-          <Button onClick={handleReset}>reset</Button>
-        </div>
-        <div className={`mg-mt-2 mg-flex ${classes.outLineContainer}`}>
-          <Button onClick={handleChangeDir} variant="outlined">
-            改变方向
-          </Button>
-          <Button variant="outlined" data-type="length" onClick={handleAction}>
-            获取长度
-          </Button>
-          <Button variant="outlined" data-type="value" onClick={handleAction}>
-            获取值
-          </Button>
-          <Button variant="outlined" data-type="reverse" onClick={handleAction}>
-            反转列表
-          </Button>
-        </div>
-        <div className={`mg-mt-2 mg-flex ${classes.outLineContainer}`}>
-          <Button onClick={handleArrayIndex} variant="outlined">
-            {'Array[index]=value操作'}
-          </Button>
-          <Input placeholder="Index" inputProps={{ ref: indexRef }}></Input>
-          <Input placeholder="Value" inputProps={{ ref: indexValRef }}></Input>
-        </div>
+          <div className="mg-flex mg-mt-2">
+            <Button onClick={handlePush}>push</Button>
+            <Button onClick={handlePop}>pop</Button>
+            <Button onClick={handleUnShift}>unshift</Button>
+            <Button onClick={handleShift}>shift</Button>
+            <Button onClick={handleReset}>reset</Button>
+          </div>
+          <div className={`mg-mt-2 mg-flex ${classes.outLineContainer}`}>
+            <Button onClick={handleChangeDir} variant="outlined">
+              改变方向
+            </Button>
+            <Button variant="outlined" data-type="length" onClick={handleAction}>
+              获取长度
+            </Button>
+            <Button variant="outlined" data-type="value" onClick={handleAction}>
+              获取值
+            </Button>
+            <Button variant="outlined" data-type="reverse" onClick={handleAction}>
+              反转列表
+            </Button>
+          </div>
+          <div className={`mg-mt-2 mg-flex ${classes.outLineContainer}`}>
+            <Button onClick={handleArrayIndex} variant="outlined">
+              {'Array[index]=value操作'}
+            </Button>
+            <Input placeholder="Index" inputProps={{ ref: indexRef }}></Input>
+            <Input placeholder="Value" inputProps={{ ref: indexValRef }}></Input>
+          </div>
 
-        <div className={`mg-mt-2 mg-flex ${classes.outLineContainer}`}>
-          <Button onClick={handleSplice} variant="outlined">
-            {'Splice操作'}
-          </Button>
-          <Input placeholder="Start" inputProps={{ ref: spliceStartRef }}></Input>
-          <Input placeholder="DeleteCount" inputProps={{ ref: spliceDeleteCountRef }}></Input>
-          <Input placeholder="1,2,3,4" inputProps={{ ref: spliceMoreRef }}></Input>
+          <div className={`mg-mt-2 mg-flex ${classes.outLineContainer}`}>
+            <Button onClick={handleSplice} variant="outlined">
+              {'Splice操作'}
+            </Button>
+            <Input placeholder="Start" inputProps={{ ref: spliceStartRef }}></Input>
+            <Input placeholder="DeleteCount" inputProps={{ ref: spliceDeleteCountRef }}></Input>
+            <Input placeholder="1,2,3,4" inputProps={{ ref: spliceMoreRef }}></Input>
+          </div>
         </div>
       </div>
     </div>
