@@ -1,3 +1,3 @@
 export interface ComponentProps {
-	className?: string;
+  className?: string;
 }

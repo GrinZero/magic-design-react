@@ -79,8 +79,12 @@
     "@emotion/styled": "^11.10.0",
     "@mui/material": "^5.10.1",
     "@mui/styles": "^5.9.3",
+    "@types/d3": "^7.4.0",
+    "@types/d3-hierarchy": "^3.1.0",
     "@types/lodash-es": "^4.17.6",
     "ahooks": "^3.7.0",
+    "d3": "^7.6.1",
+    "d3-hierarchy": "^3.1.2",
     "lodash-es": "^4.17.21",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
