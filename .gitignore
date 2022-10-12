@@ -10,6 +10,7 @@
 /dist
 /es
 /lib
+/docs
 
 # misc
 .DS_Store
