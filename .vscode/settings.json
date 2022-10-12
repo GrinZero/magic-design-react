@@ -1,0 +1,41 @@
+{
+  "json.schemaDownload.enable": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "tsconfig.json, *.config.js, *.config.ts, .stackblitzrc, pnpm*, .npm*",
+    "README.md": ".git*, .eslint*, .prettier*, .stylelint*, commitlint*, .editorconfig, .lintstagedrc"
+  },
+  "eslint.packageManager": "yarn",
+  "editor.rulers": [120],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": false, // this allows ESLint to auto fix on save
+    "source.organizeImports": false
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
