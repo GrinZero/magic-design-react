@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "GitHub.copilot",
+    "EditorConfig.EditorConfig",
+    "usernamehw.errorlens",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "PKief.material-icon-theme",
+    "Amour1688.ts-in-markdown",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
