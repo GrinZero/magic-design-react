@@ -60,7 +60,7 @@ export default defineConfig((ctx) => {
     build: {
       target: 'es2018',
       outDir: 'dist',
-      cssCodeSplit: true,
+      // cssCodeSplit: true,
       rollupOptions: {
         external: ['react', 'react-dom', 'react-router-dom'],
         output: [
