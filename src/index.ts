@@ -1,7 +1,7 @@
 import './global.css';
 
 export * from './DataStructure';
-// export { default as Foo } from './Foo';
+export * from './ImageViewer';
 export * from './Loading';
 export * from './Swiper';
 export * from './Switch';
