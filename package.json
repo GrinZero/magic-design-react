@@ -1,6 +1,6 @@
 {
   "name": "magic-design-react",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "A component library that can achieve magic effects",
   "keywords": [
     "ui",
@@ -16,6 +16,7 @@
     "magic",
     "weather",
     "swiper",
+    "zoom",
     "react",
     "typescript"
   ],
