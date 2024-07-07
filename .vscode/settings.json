@@ -9,9 +9,9 @@
   "eslint.packageManager": "yarn",
   "editor.rulers": [120],
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": false, // this allows ESLint to auto fix on save
-    "source.organizeImports": false
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "never",
+    "source.organizeImports": "never"
   },
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,

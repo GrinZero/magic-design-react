@@ -1,5 +1,6 @@
 import './global.css';
 
+export * from './AnimatedSvg';
 export * from './DataStructure';
 export * from './ImageViewer';
 export * from './Loading';
